@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task15-frontend
+  namespace: task15
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: task15-frontend
+  template:
+    metadata:
+      labels:
+        app: task15-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: task15-frontend:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: API_URL
+              value: "http://task15-api:5000"
+          ports:
+            - containerPort: 8501

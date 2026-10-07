@@ -1,0 +1,22 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: task15-api
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: task15-frontend
+    environment:
+      API_URL: http://api:5000
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    restart: unless-stopped

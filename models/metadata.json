@@ -1,0 +1,24 @@
+{
+  "model_name": "CIFAR10CNN",
+  "framework": "PyTorch",
+  "classes": [
+    "airplane",
+    "automobile",
+    "bird",
+    "cat",
+    "deer",
+    "dog",
+    "frog",
+    "horse",
+    "ship",
+    "truck"
+  ],
+  "input_size": [
+    32,
+    32
+  ],
+  "epochs": 3,
+  "train_samples": 10000,
+  "test_samples": 2000,
+  "device": "cpu"
+}

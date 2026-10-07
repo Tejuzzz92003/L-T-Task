@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+data/
+artifacts/
+models/*.pth
+.streamlit/
+.idea/
+.vscode/
